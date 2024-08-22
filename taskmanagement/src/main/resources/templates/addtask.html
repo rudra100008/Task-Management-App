@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Task</title>
+    <link rel="stylesheet" th:href= "@{/css/style.css}"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <div class="container">
+        <h1>Add New Task</h1>
+        <form th:action= "@{/addTask}" th:object="${Task}"  method="post">
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" th:value="${Task.title}" placeholder="Enter task title" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" th:value="${Task.description}" placeholder="Enter task description" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" th:value="${Task.date}" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Add Task</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

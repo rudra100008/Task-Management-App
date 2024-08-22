@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+body{
+    margin: 0px;
+    font-family:Roboto, sans-serif;
+}
+
+nav{
+    padding: 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    background-color:whitesmoke;
+
+}
+.logo{
+    font-family: 'Pacifico', cursive;
+    background: linear-gradient(45deg, #FF6B6B, #FFD93D); 
+    font-weight: bold;
+    font-size: 24px;
+    color: white;
+    border: 2px solid white;
+    border-radius: 8px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    transition: transform 0.3s;
+    transition-timing-function: ease-in-out;
+}
+.logo:hover{
+    transform: scale(1.1);
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+}
+.nav-link{
+    list-style-type: none;
+    display: flex;
+    margin:0;
+    padding: 0;
+    align-items: center; 
+}
+.nav-link li{
+    margin-left:  20px;
+    font-family: Roboto, sans-serif;
+}
+.nav-link a{
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+    border-radius: 5px;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+}
+.nav-link a:hover{
+    background-color: #61A4D0;
+    color: #fff;
+}
