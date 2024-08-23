@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Wall</title>
+    <link rel="stylesheet" th:href= "@{/css/navbar.css}">
+    <link rel="stylesheet" th:href= "@{/css/style1.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <div th:include= "~{navbar :: navbar }"></div>
+    <div class="container">
+        <main class="main-content">
+            <h1>Sticky Wall</h1>
+            <div class="add-task">
+                <a th:href= "@{/addTask}" id="addTaskBtn" class="button-style" >+</a>
+            </div>
+            <div class="task-container" id="taskContainer">
+
+                <div th:each=" task: ${tasks}" class="task-card">
+                    <div class="task-actions">
+                        <a href="#" class="task-action edit-action" title="Edit">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <a href="#" class="task-action complete-action" title="Complete">
+                            <i class="fas fa-check"></i>
+                        </a>
+                        <a href="#" class="task-action delete-action" title="Delete">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </div>
+                    <h2 th:text="${#strings.toUpperCase(task.title)}">Title</h2>
+                    <p th:text="${task.description}">Description</p>
+                    <span th:text="${task.date}">Date</span>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
