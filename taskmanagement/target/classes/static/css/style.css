@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #e8f5e9;
     margin: 0;
     padding: 0;
 }
@@ -9,9 +9,9 @@ body {
     max-width: 600px;
     margin: 50px auto;
     padding: 20px;
-    background: #fff;
+    background: #ffffff;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
@@ -21,13 +21,13 @@ h1 {
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 label {
     display: block;
     font-weight: bold;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     color: #555;
 }
 
@@ -35,30 +35,30 @@ input[type="text"],
 textarea,
 input[type="date"] {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #ddd;
-    border-radius: 4px;
+    border-radius: 5px;
     box-sizing: border-box;
 }
 
 textarea {
     resize: vertical;
-    height: 100px;
+    height: 120px;
 }
 
 button {
     background-color: #4CAF50;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 25px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     margin-top: 10px;
     cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
