@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Task</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="container">
+        <h1>Update Task</h1>
+        <form th:action="@{/update}" th:object="${tasks}" method="post">
+            <input type="hidden" id="id" name="id" th:value="${tasks.id}" />
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" th:value="${tasks.title}" placeholder="Enter task title" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" th:value="${tasks.description}" placeholder="Enter task description" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" th:value="${tasks.date}" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Update Task</button>
+            </div>
+            <div class="form-group">
+                <a th:href="@{/homepage}">Home page</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

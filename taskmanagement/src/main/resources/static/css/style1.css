@@ -120,7 +120,11 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-size: 14px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     position: relative;
+    min-height: 150px; /* Ensures the card has enough height */
 }
 
 .task-card:hover {
@@ -129,9 +133,16 @@ body {
 }
 
 .task-card h2 {
-    font-size: 16px;
-    margin: 0;
-    color: #333;
+    .task-card h2 {
+        font-size: 16px;
+        margin: 0;
+        color: #333;
+        flex-grow: 1; /* Allows the title to take available space */
+        padding-right: 40px; /* Creates space for the action icons */
+        white-space: nowrap; /* Prevents the text from wrapping */
+        overflow: hidden; /* Ensures overflow content is hidden */
+        text-overflow: ellipsis; /* Adds ellipsis if the title is too long */
+    }
 }
 
 .task-card p {
@@ -159,6 +170,7 @@ body {
     color: #333;
     font-size: 18px;
     transition: color 0.3s ease, transform 0.3s ease;
+    flex-shrink: 0; /* Prevents the icons from shrinking */
 }
 
 .task-action:hover {

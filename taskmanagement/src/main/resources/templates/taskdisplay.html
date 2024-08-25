@@ -21,13 +21,13 @@
 
                 <div th:each=" task: ${tasks}" class="task-card">
                     <div class="task-actions">
-                        <a href="#" class="task-action edit-action" title="Edit">
+                        <a th:href= "@{'/update/'+${task.id}}" class="task-action edit-action" title="Edit">
                             <i class="fas fa-edit"></i>
                         </a>
                         <a href="#" class="task-action complete-action" title="Complete">
                             <i class="fas fa-check"></i>
                         </a>
-                        <a href="#" class="task-action delete-action" title="Delete">
+                        <a th:href= "@{'/delete/'+${task.id}}" class="task-action delete-action" title="Delete">
                             <i class="fas fa-trash"></i>
                         </a>
                     </div>

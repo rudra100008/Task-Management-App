@@ -5,10 +5,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import java.util.List;
 import com.taskmanagement.Entity.Task;
 import com.taskmanagement.Services.TaskServices;
+import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.web.servlet.view.RedirectView;
+
 
 
 @Controller
@@ -38,7 +42,30 @@ public class MainController {
         List<Task> fetchTask=this.taskServices.fetchTasks();
         model.addAttribute("tasks", fetchTask);
          return "taskdisplay";
-}
+    }
+    @GetMapping("/delete/{id}")
+    public RedirectView deleteHandler(@PathVariable("id") int id,HttpServletRequest request) 
+    {
+        this.taskServices.deleteTaskById(id);
+        RedirectView redirectView =new RedirectView();
+        redirectView.setUrl(request.getContextPath()+"/stickywall");
+        return redirectView;
+    }
+    @GetMapping("/update/{id}")
+    public String showUpdateForm(@PathVariable("id") int id,Model model)
+    {
+        Task task =this.taskServices.findTaskById(id);
+        model.addAttribute("tasks", task);
+        return "update";
+    }
+    @PostMapping("/update")
+    public String updateHandler(@ModelAttribute("Task")Task task)
+    {
+        this.taskServices.updateTask(task);
+        return "redirect:/stickywall";
+    }
+    
+    
 
     
 }

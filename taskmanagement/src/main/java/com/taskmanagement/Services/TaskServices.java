@@ -20,5 +20,18 @@ public class TaskServices {
         List<Task> fetch= (List<Task>) this.taskDao.findAll();
         return fetch;
     }
+    public void deleteTaskById(int id){
+        this.taskDao.deleteById(id);
+    }
+    public Task findTaskById(int id)
+    {
+        Object obj= taskDao.findTaskById(id);
+        Task task =(Task)obj;
+        return task;
+    }
+    public void updateTask(Task task)
+    {
+        taskDao.save(task);
+    }
     
 }
