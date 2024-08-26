@@ -1,59 +1,225 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-body{
-    margin: 0px;
-    font-family:Roboto, sans-serif;
-}
-
-nav{
-    padding: 20px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    overflow: hidden;
-    background-color:whitesmoke;
-
-}
-.logo{
-    font-family: 'Pacifico', cursive;
-    background: linear-gradient(45deg, #FF6B6B, #FFD93D); 
-    font-weight: bold;
-    font-size: 24px;
-    color: white;
-    border: 2px solid white;
-    border-radius: 8px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; 
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    transition: transform 0.3s;
-    transition-timing-function: ease-in-out;
-}
-.logo:hover{
-    transform: scale(1.1);
-    text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
-}
-.nav-link{
-    list-style-type: none;
-    display: flex;
-    margin:0;
-    padding: 0;
-    align-items: center; 
-}
-.nav-link li{
-    margin-left:  20px;
+/* General body styles */
+body {
+    margin: 0;
     font-family: Roboto, sans-serif;
+    background-color: #f5f5f5;
+    padding-left: 250px; /* Adjust padding to accommodate vertical navbar */
 }
-.nav-link a{
-    text-decoration: none;
-    color: #333;
+
+/* Vertical Navbar Styles */
+nav.vertical {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #303952; /* Dark background similar to the image */
+    height: 100vh;
+    width: 150px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: width 0.3s ease;
+}
+nav.vertical.open{
+    width:100px;
+}
+body.navbar-open {
+    transition: padding-left 0.3s ease;
+}
+
+.vertical .logo {
+    font-family: 'Pacifico', cursive;
+    font-weight: bold;
     font-size: 20px;
-    border-radius: 5px;
-    padding: 10px 15px;
-    transition: background-color 0.3s;
+    color: #fff; /* White text for the logo */
+    margin-bottom: 40px;
+    text-align: center;
 }
-.nav-link a:hover{
+
+.vertical .nav-link {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.vertical .nav-link li {
+    margin-bottom: 10px;
+}
+
+.vertical .nav-link a {
+    text-decoration: none;
+    color: #adb5bd; /* Light gray text for links */
+    font-size: 16px;
+    padding: 12px 20px;
+    width: 100px;
+    display: block;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.vertical .nav-link a:hover {
     background-color: #61A4D0;
     color: #fff;
 }
+
+/* Horizontal Navbar Styles */
+.container1{
+    display: flex;
+
+    margin-top: 5px;
+}
+
+ .logo-horizontal {
+    font-family: 'Pacifico', cursive;
+    background: linear-gradient(45deg, #FF6B6B, #FFD93D);
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    margin: 10px 20px;
+    border: 2px solid white;
+    border-radius: 8px;
+    text-transform: uppercase;
+    width: 150px;
+    letter-spacing: 1px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+    margin-bottom: 30px; /* Space between logo and links */
+}
+.logo-horizontal:hover {
+    transform: scale(1.1);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+ .nav-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+ .nav-center input[type="text"] {
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    width: 300px;
+    margin-bottom: 20px;
+    transition: border-color 0.3s;
+}
+ .nav-center input[type="text"]:focus {
+    border-color: #61A4D0;
+}
+
+/* Same CSS as before, plus the following additions */
+
+body {
+    transition: padding-left 0.3s;
+}
+
+/* Button Styles */
+.menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0px;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    font-weight:bolder; 
+    color: black;
+    border: none;
+    border-radius: 50%; /* Make it circular */
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  
+  .menu-toggle:hover {
+    background-color: lightgrey; /* Darker blue on hover */
+    transform: scale(1.1);
+  }
+
+.menu-toggle:focus {
+    outline: none; /* Remove default focus outline */
+}
+
+
+/* Responsive Styles */
+/* Responsive Styles */
+@media (max-width: 768px) {
+    /* Hide vertical navbar by default on small screens */
+    nav.vertical {
+        width: 0;
+        overflow: hidden;
+        transition: width 0.3s ease;
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        z-index: 1000;
+        background-color: #343a40;
+    }
+
+    /* Display the hamburger menu button */
+    .menu-toggle {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+        margin-right: 20px;
+    }
+
+    /* When the navbar is open (toggled), set its width */
+    nav.vertical.open {
+        width: 250px;
+    }
+
+    /* Adjust the horizontal navbar when vertical is open */
+    .horizontal {
+        left: 0;
+        width: 100%;
+    }
+
+    /* Adjust input field size */
+    .horizontal .nav-center input[type="text"] {
+        width: 200px;
+    }
+
+    .horizontal .nav-center input[type="text"]:focus {
+        width: 250px;
+    }
+
+    /* Adjust body padding when navbar is open */
+    body.navbar-open {
+        padding-left: 250px;
+    }
+}
+/* Horizontal Navbar Styles */
+nav.horizontal {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    border-bottom: 2px solid #61A4D0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    left: 150px; /* Default position offset */
+    width: calc(100% - 150px); /* Default width */
+    z-index: 999; /* Slightly lower z-index to stay behind vertical navbar */
+    transition: left 0.3s ease, width 0.3s ease;
+}
+
+/* Responsive Styles for Horizontal Navbar */
+@media (max-width: 768px) {
+    nav.horizontal {
+        left: 0; /* Adjust for smaller screens */
+        width: 100%;
+    }
+}
+
