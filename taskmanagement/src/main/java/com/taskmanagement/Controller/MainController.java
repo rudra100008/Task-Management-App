@@ -3,6 +3,7 @@ package com.taskmanagement.Controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,6 +12,8 @@ import java.util.List;
 import com.taskmanagement.Entity.Task;
 import com.taskmanagement.Services.TaskServices;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.Valid;
+
 import org.springframework.web.servlet.view.RedirectView;
 
 
@@ -33,9 +36,12 @@ public class MainController {
     }
 
     @PostMapping("/addTask")
-    public String addTaskHandler(@ModelAttribute("Task") Task task) {
+    public String addTaskHandler(@Valid @ModelAttribute("Task") Task task,BindingResult result) {
+        if (result.hasErrors()) {
+            return "addtask";
+        }
         this.taskServices.addTask(task);
-        return "redirect:/homepage";
+        return "redirect:/stickywall";
     }
     @GetMapping("/stickywall")
     public String stickyWallHandler(Model model) {

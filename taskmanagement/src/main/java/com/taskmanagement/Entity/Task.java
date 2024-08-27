@@ -1,14 +1,13 @@
 package com.taskmanagement.Entity;
 
 import java.time.LocalDate;
-
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.FutureOrPresent;
 @Entity
 @Table(name="Task")
 public class Task {
@@ -20,6 +19,7 @@ public class Task {
     @Column(name = "Description")
     private String description;
     @Column(name = "Date")
+    @FutureOrPresent(message = "Date should be in present or future")
     private LocalDate date;
 
     public Task(){
