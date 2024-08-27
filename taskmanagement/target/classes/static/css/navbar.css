@@ -210,6 +210,47 @@ nav.vertical.open .nav-link i{
 nav.vertical.open ~ .container .main-content {
     margin-left: 60px; 
 }
+.signup {
+    text-decoration: none;
+    color: #adb5bd; 
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    margin-right: 40px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    background-color: #f8f9fa; /* Light background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.signup a {
+    display: flex;
+    align-items: center;
+    color: inherit;
+   ; /* Maintain the color on the link */
+}
+
+.signup a i {
+    margin-right: 8px; /* Space between icon and text */
+}
+
+.signup:hover {
+    background-color: #61A4D0;
+    color: #fff;
+    transform: translateY(-2px); /* Subtle lift effect */
+}
+
+.signup:hover i {
+    transform: scale(1.1); /* Slight icon enlargement */
+}
+
+.signup a:hover {
+    color: inherit; /* Ensure color transition on hover */
+}
+
 
 
 

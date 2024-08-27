@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" xmlns="https://www.thymeleaf.org">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Sign Up</title>
+  </head>
+  <body class="bg-light">
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card shadow-sm">
+            <div class="card-header text-center bg-primary text-white">
+              <h3>Sign Up</h3>
+            </div>
+            <div class="card-body">
+              <form method="post" th:action="@{/signup}" th:object="${signup}">
+                <div class="form-group mb-3">
+                  <label for="username" class="form-label">Username</label>
+                  <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username">
+                </div>
+                <div class="form-group mb-3">
+                  <label for="email" class="form-label">Email Address</label>
+                  <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter your email">
+                </div>
+                <div class="form-group mb-3">
+                  <label for="password" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password">
+                </div>
+                <div class="form-group form-check mb-4">
+                  <input type="checkbox" class="form-check-input" id="isAgreed" name="isAgreed">
+                  <label class="form-check-label" for="isAgreed">Agree to terms and conditions</label>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Submit</button>
+              </form>
+            </div>
+            <div class="card-footer text-center">
+              <small class="text-muted">Already have an account? <a href="#" class="text-primary">Login</a></small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcAPPREtNdJvYUNxF+K2p7TAnA8YXTy1Yq/YyIM7+fddC/xZq7XpDRoSAYkNpRW" crossorigin="anonymous"></script>
+  </body>
+</html>

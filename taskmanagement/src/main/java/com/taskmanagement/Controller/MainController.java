@@ -70,8 +70,4 @@ public class MainController {
         this.taskServices.updateTask(task);
         return "redirect:/stickywall";
     }
-    
-    
-
-    
 }
