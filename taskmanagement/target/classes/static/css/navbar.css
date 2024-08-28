@@ -98,6 +98,7 @@ nav.vertical.open .nav-link i{
     margin-right: 10px; /* Space between icon and text */
     transition: font-size 0.3s ease-in-out;
 }
+
 .vertical .logo {
     font-family: 'Pacifico', cursive;
     font-weight: bold;
@@ -144,7 +145,7 @@ nav.vertical.open .nav-link i{
     font-size: 20px;
     font-weight: bolder;
     color: black;
-    background-color:whitesmoke;
+    background-color: whitesmoke;
     border: none;
     border-radius: 50%; /* Make it circular */
     cursor: pointer;
@@ -176,9 +177,6 @@ nav.vertical.open .nav-link i{
     nav.vertical.open {
         width: 200px;
     }
-    nav.vertical.open ~ .container .main-content {
-        margin-left: 200px; /* Adjusted margin for open navbar */
-    }
 
     .main-content {
         margin-left: 0; /* Remove left margin on smaller screens */
@@ -201,6 +199,7 @@ nav.vertical.open .nav-link i{
         padding-left: 200px;
     }
 }
+
 /* Main Content Adjustments */
 .main-content {
     margin-left: 200px; /* Adjust margin to match navbar width */
@@ -210,6 +209,8 @@ nav.vertical.open .nav-link i{
 nav.vertical.open ~ .container .main-content {
     margin-left: 60px; 
 }
+
+/* SignUp Button Styles */
 .signup {
     text-decoration: none;
     color: #adb5bd; 
@@ -229,8 +230,7 @@ nav.vertical.open ~ .container .main-content {
 .signup a {
     display: flex;
     align-items: center;
-    color: inherit;
-   ; /* Maintain the color on the link */
+    color: inherit; /* Maintain the color on the link */
 }
 
 .signup a i {
@@ -251,6 +251,43 @@ nav.vertical.open ~ .container .main-content {
     color: inherit; /* Ensure color transition on hover */
 }
 
+/* LogIn Button Styles */
+.login {
+    text-decoration: none;
+    color: #adb5bd; 
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    margin-right: 40px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    background-color: #f8f9fa; /* Light background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
 
+.login a {
+    display: flex;
+    align-items: center;
+    color: inherit; /* Maintain the color on the link */
+}
 
+.login a i {
+    margin-right: 8px; /* Space between icon and text */
+}
 
+.login:hover {
+    background-color: #61A4D0;
+    color: #fff;
+    transform: translateY(-2px); /* Subtle lift effect */
+}
+
+.login:hover i {
+    transform: scale(1.1); /* Slight icon enlargement */
+}
+
+.login a:hover {
+    color: inherit; /* Ensure color transition on hover */
+}

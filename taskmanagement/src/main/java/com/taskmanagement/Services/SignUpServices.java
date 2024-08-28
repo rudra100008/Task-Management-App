@@ -15,5 +15,14 @@ public class SignUpServices {
     {
         this.signUpDao.save(signup);
     }
-    
+    public boolean validateUser(String username,String password)
+    {
+        SignUp signUp =  this.signUpDao.findByUsername(username);
+        if (signUp !=null  && username.equals(signUp.getUsername()) && password.equals(signUp.getPassword()) ) {
+            return true;
+        }else{
+            return false;
+        }
+    }
+        
 }

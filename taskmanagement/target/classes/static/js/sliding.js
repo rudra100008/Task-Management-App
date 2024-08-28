@@ -4,6 +4,7 @@ function toggleNavbar() {
     const body = document.body;
 
     verticalNavbar.classList.toggle('open');
+    verticalNavbar.classList.toggle('active');
     body.classList.toggle('navbar-open');
 
     if (verticalNavbar.classList.contains('open')) {
@@ -11,4 +12,12 @@ function toggleNavbar() {
     } else {
         mainContent.style.marginLeft='200px';
     }
+}
+function redirectToSignUp()
+{
+    windows.location.href="http://localhost:8080/signup";
+}
+function redirectToLogin()
+{
+    windows.location.href="http://localhost:8080/login";
 }
